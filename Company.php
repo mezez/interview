@@ -73,7 +73,10 @@ class Company
             }
         }
 
-        return $companiesYouCanWorkFor;
+        //now filter companies you can work for from the companyRequirementsArray to get companies you cannot work for
+        $companiesYouCannotWorkFor = $this-> getCompaniesYouCannotWorkFor($companiesYouCanWorkFor, $companyRequirements);
+
+        return ['companies_you_can_work_for' => $companiesYouCanWorkFor, 'companies_you_cannot_work_for' => $companiesYouCannotWorkFor ];
     }
 
     private  function doComparison($myQualificationsArray,$companyRequirements, $rootIndex){
@@ -88,5 +91,23 @@ class Company
         return $matchedQualificationCount;
     }
 
+    private function getCompaniesYouCannotWorkFor($companiesYoucanWorkForArray, $companyRequirementsArray){
+        $companiesYouCannotWorkFor = [];
+        $companiesYouCannotWorkForFiltered = [];
+        foreach($companyRequirementsArray as $companyRequirement){
+            if(!in_array($companyRequirement[0],$companiesYoucanWorkForArray)){
+                //you cannot work here
+                array_push($companiesYouCannotWorkFor, $companyRequirement[0]);
+            }
+        }
+        for($i = 0; $i < count($companiesYouCannotWorkFor); $i++){
+            if($i == 0) {
+                array_push($companiesYouCannotWorkForFiltered, $companiesYouCannotWorkFor[$i]);
+            }elseif( $companiesYouCannotWorkFor[$i] != $companiesYouCannotWorkFor[$i -1]){
+                array_push($companiesYouCannotWorkForFiltered, $companiesYouCannotWorkFor[$i]);
+            }
+        }
+        return $companiesYouCannotWorkForFiltered;
+    }
 
 }

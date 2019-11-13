@@ -49,16 +49,33 @@ $myQualificationsArray = ['bike', 'drivers_license']; //modify as desired to see
 
 
 $companies = new \Interview\Company($companyRequirementsArray);
-$companiesYouCanWorkFor = $companies->checkRequirements($myQualificationsArray);
+$result = $companies->checkRequirements($myQualificationsArray);
 
-if(($companiesYouCanWorkFor != null || empty($companiesYouCanWorkFor)) && count($companiesYouCanWorkFor) > 0){
+if(($result != null || empty($result)) && count($result) > 0){
     //manipulate and show user
     echo "You can work for:";
      echo"<br>";
-    foreach($companiesYouCanWorkFor as $company){
+    foreach($result['companies_you_can_work_for'] as $company){
 
         echo $company; echo"<br>";
     }
+
+    echo"<br>";
+    echo"<br>";
+    echo "You cannot work for:";
+    echo"<br>";
+   foreach($result['companies_you_cannot_work_for'] as $company){
+
+       echo $company; echo"<br>";
+   }
+
+//    for($i = 0; $i < count($result['companies_you_cannot_work_for']); $i++){
+//        if($i == 0) {
+//         echo $result['companies_you_cannot_work_for'][$i]; echo"<br>";
+//        }elseif( $result['companies_you_cannot_work_for'][$i] != $result['companies_you_cannot_work_for'][$i -1]){
+//         echo $result['companies_you_cannot_work_for'][$i]; echo"<br>";
+//        }
+//    }
 }else{
     echo "There are no companies available";
 }
