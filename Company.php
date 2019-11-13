@@ -31,7 +31,6 @@ class Company
         //create an array to contain companiesYouAreEligible
         $companiesYouCanWorkFor = [];
         $companyRequirements = $this->companyRequirements[0];
-        //print_r(count($companyRequirements)); die();
 
         //if qualifications array is empty or null, find all companies where the requirement length is 1 and the requirement is "nothing"
         if ($myQualificationsArray == null or empty($myQualificationsArray)) {
