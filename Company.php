@@ -73,7 +73,6 @@ class Company
             }
         }
 
-        //sweep the array for duplicate entries
         return $companiesYouCanWorkFor;
     }
 
