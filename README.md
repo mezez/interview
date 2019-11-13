@@ -1,4 +1,6 @@
 # interview
+TO RUN PROGRAM, access run.php on the browser
+
 A repository for an interview
 
 See instructions on how to modify variables in the run.php file
