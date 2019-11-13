@@ -1,5 +1,6 @@
 # interview
-TO RUN PROGRAM, access run.php on the browser
+TO RUN PROGRAM, access run.php on the browser 
+ENSURE THAT run.php and Company.php are in a root folder called interview
 
 A repository for an interview
 
