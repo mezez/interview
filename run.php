@@ -69,13 +69,6 @@ if(($result != null || empty($result)) && count($result) > 0){
        echo $company; echo"<br>";
    }
 
-//    for($i = 0; $i < count($result['companies_you_cannot_work_for']); $i++){
-//        if($i == 0) {
-//         echo $result['companies_you_cannot_work_for'][$i]; echo"<br>";
-//        }elseif( $result['companies_you_cannot_work_for'][$i] != $result['companies_you_cannot_work_for'][$i -1]){
-//         echo $result['companies_you_cannot_work_for'][$i]; echo"<br>";
-//        }
-//    }
 }else{
     echo "There are no companies available";
 }
