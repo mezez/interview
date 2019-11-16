@@ -19,7 +19,7 @@ $companyClass = require('Company.php');
 * and consistency
  * COMPANIES THAT REQUIRE NOTHING SHOULD HAVE THEIR REQUIREMENTS SPECIFIED AS "nothing"
  *
- * YOU CAN ADD MORE OR REMOVE FROM THE ARRAY FOLLOWING THE CONVENSION
+ * YOU CAN ADD MORE OR REMOVE FROM THE ARRAY FOLLOWING THE CONVENTION
  */
 $companyRequirementsArray = [
     ['company_A', ['apartment', 'property_insurance']],

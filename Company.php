@@ -51,7 +51,7 @@ class Company
                 if ((count($companyRequirements[$i][1]) == 1) && strtolower($companyRequirements[$i][1][0]) == "nothing") {
                     array_push($companiesYouCanWorkFor, $companyRequirements[$i][0]);
                 } elseif (count($companyRequirements[$i][1]) < count($myQualificationsArray)) {
-                    //else if the requirement array length is less than you qualification length
+                    //else if the requirement array length is less than your qualification length
 
                     //check if you have enough qualifications that match the number they have. If so, add the company name
                     $matchedQualificationCount = $this->doComparison($myQualificationsArray,$companyRequirements, $i);
@@ -81,7 +81,7 @@ class Company
     private  function doComparison($myQualificationsArray,$companyRequirements, $rootIndex){
         $matchedQualificationCount = 0;
 
-        //check if you have enough qualifications that match the number they have, if so add the company name
+        //check if you have enough qualifications that match the number they have, if so, add the company name
         foreach ($myQualificationsArray as $qualification) {
             if (in_array($qualification, $companyRequirements[$rootIndex][1])) {
                 $matchedQualificationCount++;
